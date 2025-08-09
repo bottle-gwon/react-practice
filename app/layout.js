@@ -22,13 +22,15 @@ export const metadata = {
   //   http://localhost:3000/products 로 이동할 수 있게, products 관련 layout, page 파일을 생성해주세요.
   // 그리고 Root Layout(/app/layout.jsx) 내부에 생성된 products 페이지로 이동할 수 있는 버튼을 'next/link' 패키지를 사용해 만들어주세요.
 
+
 export default function RootLayout({ children }) {
+  const sort = 'asc';
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
-        <Link href='/products'> 프로덕트 </Link>
+        <Link href={`/products?sort=${sort}`}> 프로덕트 </Link>
         {/* <p>여기는 layout {process.cwd()}{__filename}</p> */}
         {children}
       </body>
