@@ -25,7 +25,8 @@ export default async function ProductsPage({searchParams}){
         productsRawData.sort((a,b)=> b.id - a.id)
     }
 
-
+    // throw new Error("테스트 에러");
+    
     return (
     <div>
       <p>여기는 products</p>
