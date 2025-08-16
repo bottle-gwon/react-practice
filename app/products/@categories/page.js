@@ -1,13 +1,14 @@
+import axios from "axios";
 
 async function fetchData() {
     try{
-        const res = await fetch(`http://localhost:8080/api/categories`)
-
-        if(!res.ok){
-            throw new Error('로딩 실패')
+        const res = await axios.get(`http://localhost:8080/api/categories`)
+        
+        if(res.status !== 200){
+            throw new Error(`카테고리 로딩 실패 ${res.status}`)
         }
-        const resData = await res.json()
-        return resData;
+
+        return res.data;
     }catch(e){
         console.error(e)
     }

@@ -1,8 +1,24 @@
 'use client';
 
-export default function BannerError({error}) {
-    const errorMessage = error.message ? error.message : "알 수 없는 오류"
+export default function BannerError({error, reset}) {
+
+    const errorMessage = errorDetail(error);
+
     return(
-        <p>{` ${errorMessage}`}</p>
+        <div>
+            <p>{` ${errorMessage}`}</p>
+            <button onClick={() => reset()}>로딩 재시도</button>
+        </div>
     )
+}
+
+
+function errorDetail (error){
+    if(error instanceof Error){
+        return error.message;
+    }
+    else{
+        return `알 수 없는 에러 발생`;
+    }
+
 }
