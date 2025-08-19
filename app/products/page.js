@@ -1,6 +1,11 @@
 import ProductList from "../components/ProductList";
 
 
+export const metadata = {
+  title: 'product-metadata',
+  description: 'product-metadata-test 테스트중',
+}
+
 export default async function ProductsPage({searchParams}){
 // /app/products/page.jsx 내부에 아래 정보를 가진 상품리스트 UI를 만들어주세요.
 // 단, 해당 상품리스트는 CSR로 동작되어야 합니다.
