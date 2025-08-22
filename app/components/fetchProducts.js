@@ -4,11 +4,10 @@ import axios from "axios";
 export default async function fetchProduct  (id) {
 
     try {
-        console.log(id)
-        const product = await axios.get(`http://localhost:8080/api/products/${id}`)
-
+        // const product = await axios.get(`http://localhost:8080/api/products/${id}`)
+        const product = await axios.get(`http://localhost:3000/api/products/${id}`)
         if(product.status !==200){
-            throw new Error(`메타 데이터 로딩 실패 ${product.status}`)
+            throw new Error(` 데이터 로딩 실패 ${product.status}`)
         }
         return product.data;
     } catch (error) {

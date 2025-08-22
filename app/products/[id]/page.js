@@ -60,7 +60,7 @@ async function fetchData(id) {
 export default async function ProductDetail ({params}) {
     const { id }  = await params;
 
-    const data = fetchProductdata(id)
+    const data = await fetchProductdata(id)
     const displayData = JSON.stringify(data.data);
     return(
         <>

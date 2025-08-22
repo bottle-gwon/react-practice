@@ -25,7 +25,7 @@ export default function ProductList({products}) {
         
         <div className="flex flex-col">
             {products.map(el =>(
-                <Link href={`/products/${el.id}`} key={el.id}>{el.id} / {el.label}</Link>
+                <Link href={`/products/${el.id}`} key={el.id}>{el.id} / {el.title}</Link>
             ))}
         </div>
     </div>
