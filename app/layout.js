@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
         <Link href={`/products?sort=${sort}`}> 프로덕트 </Link>
+        <Link href={'/dashBoard'}>대시보드</Link>
         {/* <p>여기는 layout {process.cwd()}{__filename}</p> */}
         {children}
       </body>
