@@ -17,17 +17,24 @@ export default function ProductList({products}) {
         router.push('/products?sort=desc')
 
     }
-
-    return(
-    <div>
-        <button onClick={ascButtonHandler} className="border mr-3">오름차순</button>
-        <button onClick={descButtonHandler} className="border ml-3">내림차순</button>
-        
-        <div className="flex flex-col">
-            {products.map(el =>(
-                <Link href={`/products/${el.id}`} key={el.id}>{el.id} / {el.title}</Link>
-            ))}
+    console.log(products)
+    if(products === undefined){
+        return;
+    }
+    if(products){
+        return(
+        <div>
+            <button onClick={ascButtonHandler} className="border mr-3">오름차순</button>
+            <button onClick={descButtonHandler} className="border ml-3">내림차순</button>
+            
+            <div className="flex flex-col">
+                {
+                    products.map(el =>(
+                        <Link href={`/products/${el.id}`} key={el.id}>{el.id} / {el.title}</Link>
+                    ))  
+                }
+            </div>
         </div>
-    </div>
-    )
+        )
+    } 
 }

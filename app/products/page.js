@@ -2,6 +2,7 @@ import axios from "axios";
 import ProductList from "../components/ProductList";
 
 
+
 export const metadata = {
   title: 'product-metadata',
   description: 'product-metadata-test 테스트중',
@@ -61,7 +62,6 @@ export default async function ProductsPage({searchParams}){
       {/* {productsRawData.map((el) => 
         <ProductList key={el.id} product= {el}/>)} */}
         <ProductList products={productsRawData.data} />
-    
     </div>
   );
 }

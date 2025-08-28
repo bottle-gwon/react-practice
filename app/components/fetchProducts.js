@@ -13,7 +13,7 @@ export default async function fetchProduct  (id) {
     } catch (error) {
         console.error(error)
         if(error instanceof Error){
-            throw new Error(error)
+            throw error
         }
         else{
             throw new Error('알 수 없는 에러' + String(error))
